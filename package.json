@@ -1,0 +1,14 @@
+{
+  "name": "ropes-server",
+  "version": "1.0.0",
+  "description": "the backend server taking requests from cross-platform apps and hitting the mongoDB",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohan Varma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
