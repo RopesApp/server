@@ -8,7 +8,10 @@ var router = express.Router();
 
 router.route('/gyms')
   .get(function(req, res) {
-    res.json({ message: 'woo' });
+    Gym.find(function(err, gyms) {
+      if (err) res.send(err);
+      res.json(gyms)
+    });
   })
   .post(function(req, res) {
     // instantiate new instance of gym in DB
@@ -21,8 +24,7 @@ router.route('/gyms')
 
     // save the gym to the mongo DB
     gym.save(function(err) {
-      if (err)
-        res.send(err);
+      if (err) res.send(err);
       res.json({ message: 'Gym created!' });
     });
   });
